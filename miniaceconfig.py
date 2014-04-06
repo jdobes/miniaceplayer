@@ -1,7 +1,6 @@
 '''
 MiniAcePlayer configuration script
 '''
-import platform
 
 class MiniAceConfig(object):
     # ----------------------------------------------------
