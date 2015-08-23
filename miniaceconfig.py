@@ -9,8 +9,9 @@ class MiniAceConfig(object):
     #
     # Ace Stream API key (None uses remote key generator)
     # You probably shouldn't touch this
-    acekey = None
+    #acekey = None
     #acekey = 'kjYX790gTytRaXV04IvC-xZH3A18sj5b1Tf3I-J5XVS1xsj-j0797KwxxLpBl26HPvWMm'
+    acekey = 'n51LvQoTlJzNGaFxseRK-uvnvX-sD4Vm5Axwmc4UcoD-jruxmKsuJaH0eVgE'
     # Ace Stream Engine host
     # Change this if you use remote Ace Stream Engine
     # Remember that by default Ace Stream Engine listens only

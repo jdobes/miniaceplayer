@@ -4,7 +4,7 @@
 # Attempt to connect to the AceStream given on the command-line, open 
 # the user's favourite movie player to play the stream
 
-import pexpect,time,sys,urllib2,json,pprint,subprocess,socket
+import pexpect,time,sys,json,pprint,subprocess,socket,hashlib
 
 # holds our config
 from miniaceconfig import MiniAceConfig
@@ -61,9 +61,9 @@ child.sendline ('HELLOBG')
 child.expect ('key=.*')
 # print child.before
 key = child.after.strip()
-key = key[4:]
+key = key[4:14]
 # print "Key = " + key
-rup = 'READY key=' + urllib2.urlopen("http://valdikss.org.ru/tv/key.php?key=" + key, timeout=10).read()
+rup = 'READY key=' + MiniAceConfig.acekey.split('-')[0] + '-' + hashlib.sha1(key + MiniAceConfig.acekey).hexdigest()
 # print rup
 child.sendline(rup)
 
